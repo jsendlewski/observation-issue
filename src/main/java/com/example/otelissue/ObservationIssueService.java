@@ -17,7 +17,7 @@ class ObservationIssueService {
     }
 
     public String someMethod() {
-        logger.info("Thread: {}, span: {}", Thread.currentThread().getName(), tracer.currentSpan().context().traceId());
+        logger.info("Thread: {}, traceId: {}", Thread.currentThread().getName(), tracer.currentSpan().context().traceId());
         return repository.save(new MyEntity()).id().toString();
     }
 }
